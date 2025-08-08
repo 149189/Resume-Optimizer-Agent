@@ -1,0 +1,7 @@
+django
+mysqlclient
+PyMuPDF 
+python-docx
+djangorestframework
+django-cors-headers
+docx2txt
