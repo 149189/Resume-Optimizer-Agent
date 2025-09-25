@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { API_BASE } from "../config";
 
 function FileUpload() {
   const [file, setFile] = useState(null);
@@ -31,12 +32,14 @@ function FileUpload() {
   };
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div>
       <h2>Upload Resume (PDF/DOCX)</h2>
-      <input type="file" accept=".pdf,.docx" onChange={handleFileChange} />
-      <button onClick={handleUpload}>Upload & Extract Text</button>
+      <div className="row">
+        <input className="input" type="file" accept=".pdf,.docx" onChange={handleFileChange} />
+        <button className="btn" onClick={handleUpload}>Upload & Extract Text</button>
+      </div>
       <h3>Extracted Text:</h3>
-      <textarea rows="15" cols="80" value={extractedText} readOnly />
+      <textarea className="textarea" rows="10" value={extractedText} readOnly />
     </div>
   );
 }
