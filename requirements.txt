@@ -5,3 +5,6 @@ python-docx
 djangorestframework
 django-cors-headers
 docx2txt
+scikit-learn
+prometheus-client
+openai

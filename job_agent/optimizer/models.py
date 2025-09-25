@@ -1,4 +1,19 @@
 from django.db import models
+
+
+class EmbeddingDoc(models.Model):
+    title = models.CharField(max_length=255, blank=True, default="")
+    text = models.TextField()
+    vector_json = models.TextField()  # store JSON-encoded list[float]
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        indexes = [
+            models.Index(fields=["created_at"]),
+        ]
+
+    def __str__(self) -> str:
+        return f"EmbeddingDoc(id={self.id}, title={self.title})"
 from django.contrib.auth.models import User
 
 class JobPosting(models.Model):
